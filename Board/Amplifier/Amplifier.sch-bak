@@ -14,22 +14,11 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Transistor_FET:C2M0025120D Q?
-U 1 1 62198480
-P 5050 2850
-F 0 "Q?" H 5254 2896 50  0000 L CNN
-F 1 "C2M0025120D" H 5254 2805 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-247-3_Vertical" H 5050 2850 50  0001 C CIN
-F 3 "https://www.wolfspeed.com/media/downloads/161/C2M0025120D.pdf" H 5050 2850 50  0001 L CNN
-	1    5050 2850
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R?
 U 1 1 6219995F
 P 5150 2500
 F 0 "R?" H 5220 2546 50  0000 L CNN
-F 1 "R" H 5220 2455 50  0000 L CNN
+F 1 "6R" H 5220 2455 50  0000 L CNN
 F 2 "" V 5080 2500 50  0001 C CNN
 F 3 "~" H 5150 2500 50  0001 C CNN
 	1    5150 2500
@@ -40,18 +29,18 @@ L Device:R R?
 U 1 1 6219A661
 P 5150 3200
 F 0 "R?" H 5220 3246 50  0000 L CNN
-F 1 "R" H 5220 3155 50  0000 L CNN
+F 1 "0.6R" H 5220 3155 50  0000 L CNN
 F 2 "" V 5080 3200 50  0001 C CNN
 F 3 "~" H 5150 3200 50  0001 C CNN
 	1    5150 3200
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R 1.6k
 U 1 1 6219B4F5
 P 4850 3200
-F 0 "R?" H 4920 3246 50  0000 L CNN
-F 1 "R" H 4920 3155 50  0000 L CNN
+F 0 "1.6k" H 4920 3246 50  0000 L CNN
+F 1 "800R" H 4920 3155 50  0000 L CNN
 F 2 "" V 4780 3200 50  0001 C CNN
 F 3 "~" H 4850 3200 50  0001 C CNN
 	1    4850 3200
@@ -62,17 +51,12 @@ L Device:R R?
 U 1 1 6219CCE8
 P 4850 2500
 F 0 "R?" H 4920 2546 50  0000 L CNN
-F 1 "R" H 4920 2455 50  0000 L CNN
+F 1 "21k" H 4920 2455 50  0000 L CNN
 F 2 "" V 4780 2500 50  0001 C CNN
 F 3 "~" H 4850 2500 50  0001 C CNN
 	1    4850 2500
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4850 2650 4850 2850
-Wire Wire Line
-	4850 3050 4850 2850
-Connection ~ 4850 2850
 Wire Wire Line
 	4850 3350 5150 3350
 Wire Wire Line
@@ -169,7 +153,7 @@ $EndComp
 Wire Wire Line
 	6150 2750 6150 3350
 Wire Wire Line
-	6150 3350 5150 3350
+	6150 3350 5450 3350
 $Comp
 L Device:CP C?
 U 1 1 621AA6F6
@@ -183,7 +167,62 @@ F 3 "~" H 5750 2650 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5150 2650 5600 2650
-Connection ~ 5150 2650
 Wire Wire Line
 	5900 2650 6150 2650
+Wire Wire Line
+	4850 2650 4850 2850
+$Comp
+L dk_Transistors-Bipolar-BJT-Single:2SD2390 Q?
+U 1 1 6244F8E5
+P 5050 2850
+F 0 "Q?" H 5238 2903 60  0000 L CNN
+F 1 "2SD2390" H 5238 2797 60  0000 L CNN
+F 2 "digikey-footprints:TO-3P-5" H 5250 3050 60  0001 L CNN
+F 3 "http://www.semicon.sanken-ele.co.jp/sk_content/2sd2390_ds_en.pdf" H 5250 3150 60  0001 L CNN
+F 4 "2SD2390-ND" H 5250 3250 60  0001 L CNN "Digi-Key_PN"
+F 5 "2SD2390" H 5250 3350 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 5250 3450 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 5250 3550 60  0001 L CNN "Family"
+F 8 "http://www.semicon.sanken-ele.co.jp/sk_content/2sd2390_ds_en.pdf" H 5250 3650 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/sanken/2SD2390/2SD2390-ND/3661818" H 5250 3750 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN DARL 150V 10A TO-3P" H 5250 3850 60  0001 L CNN "Description"
+F 11 "Sanken" H 5250 3950 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5250 4050 60  0001 L CNN "Status"
+	1    5050 2850
+	1    0    0    -1  
+$EndComp
+Connection ~ 4850 2850
+Wire Wire Line
+	4850 2850 4850 3050
+Connection ~ 5150 2650
+$Comp
+L Device:C C?
+U 1 1 62452AD6
+P 4550 2850
+F 0 "C?" H 4665 2896 50  0000 L CNN
+F 1 "C" H 4665 2805 50  0000 L CNN
+F 2 "" H 4588 2700 50  0001 C CNN
+F 3 "~" H 4550 2850 50  0001 C CNN
+	1    4550 2850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4700 2850 4850 2850
+$Comp
+L Device:CP C?
+U 1 1 62455951
+P 5450 3200
+F 0 "C?" H 5568 3246 50  0000 L CNN
+F 1 "CP" H 5568 3155 50  0000 L CNN
+F 2 "" H 5488 3050 50  0001 C CNN
+F 3 "~" H 5450 3200 50  0001 C CNN
+	1    5450 3200
+	1    0    0    -1  
+$EndComp
+Connection ~ 5450 3350
+Wire Wire Line
+	5450 3350 5150 3350
+Wire Wire Line
+	5450 3050 5150 3050
+Connection ~ 5150 3050
 $EndSCHEMATC
